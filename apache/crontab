@@ -1,0 +1,4 @@
+/5 * * * * php /var/www/html/app/console mautic:leadlists:update --env=prod
+/5 * * * * php /var/www/html/app/console mautic:campaigns:update --env=prod
+/5 * * * * php /var/www/html/app/console mautic:campaigns:trigger --env=prod
+/5 * * * * php /var/www/html/app/console mautic:email:process --env=prod

@@ -29,5 +29,8 @@ COPY docker-entrypoint.sh /entrypoint.sh
 COPY makeconfig.php /makeconfig.php
 COPY makedb.php /makedb.php
 
+ADD crontab /etc/cron.d/
+RUN crontab /etc/cron.d/
+
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["apache2-foreground"]
