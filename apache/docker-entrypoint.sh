@@ -69,4 +69,6 @@ if ! [ -e app/config/local.php ]; then
         chown www-data:www-data app/config/local.php
 fi
 
+echo "running cron" && cron -f &
+
 exec "$@"

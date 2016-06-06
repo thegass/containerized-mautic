@@ -5,7 +5,7 @@ MAINTAINER Michael Babker <michael.babker@mautic.org> (@mbabker)
 RUN a2enmod rewrite
 
 # Install PHP extensions
-RUN apt-get update && apt-get install -y libc-client-dev libicu-dev libkrb5-dev libmcrypt-dev libssl-dev unzip zip
+RUN apt-get update && apt-get install -y libc-client-dev libicu-dev libkrb5-dev libmcrypt-dev libssl-dev unzip zip cron
 RUN rm -rf /var/lib/apt/lists/*
 RUN docker-php-ext-configure imap --with-imap --with-imap-ssl --with-kerberos
 RUN docker-php-ext-install imap intl mbstring mcrypt mysqli pdo pdo_mysql
@@ -29,8 +29,9 @@ COPY docker-entrypoint.sh /entrypoint.sh
 COPY makeconfig.php /makeconfig.php
 COPY makedb.php /makedb.php
 
-ADD crontab /etc/cron.d/
-RUN crontab /etc/cron.d/
+COPY mautic.cron /etc/cron.d/mautic.cron
+RUN chmod 644 /etc/cron.d/mautic.cron
+RUN /usr/bin/crontab /etc/cron.d/mautic.cron
 
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["apache2-foreground"]
