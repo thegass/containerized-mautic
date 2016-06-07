@@ -1,4 +1,4 @@
-0,15,27,39 * * * * php /var/www/html/app/console mautic:leadlists:update --env=prod && echo "leadlist updated"
-3,18,30,42 * * * * php /var/www/html/app/console mautic:campaigns:update --env=prod && echo "campaigns updated"
-6,21,33,45 * * * * php /var/www/html/app/console mautic:campaigns:trigger --env=prod && echo "campaigns triggered"
-12,24,36,48 * * * * php /var/www/html/app/console mautic:email:process --env=prod && echo "emails processed"
+0,15,27,39 * * * * /usr/local/bin/php /var/www/html/app/console mautic:leadlists:update >> /var/log/mautic.cron.log 2>&1
+3,18,30,42 * * * * /usr/local/bin/php /var/www/html/app/console mautic:campaigns:update >> /var/log/mautic.cron.log 2>&1
+6,21,33,45 * * * * /usr/local/bin/php /var/www/html/app/console mautic:campaigns:trigger >> /var/log/mautic.cron.log 2>&1
+12,24,36,48 * * * * /usr/local/bin/php /var/www/html/app/console mautic:email:process >> /var/log/mautic.cron.log 2>&1
