@@ -13,8 +13,7 @@ RUN docker-php-ext-install imap intl mbstring mcrypt mysqli pdo pdo_mysql zip
 VOLUME /var/www/html
 
 # Define Mautic version and expected SHA1 signature
-ENV MAUTIC_VERSION 1.4.1
-ENV MAUTIC_SHA1 f0f89343f9ce67b6b4cafb44fd7b15f325ed726f
+ENV MAUTIC_VERSION 2.1.0
 
 # Download package and extract to web volume
 RUN curl -o mautic.zip -SL https://s3.amazonaws.com/mautic/releases/${MAUTIC_VERSION}.zip \
