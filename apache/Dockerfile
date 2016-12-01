@@ -1,5 +1,5 @@
 FROM php:5.6-apache
-MAINTAINER Michael Babker <michael.babker@mautic.org> (@mbabker)
+MAINTAINER Autoize <info@autoize.com> (@autoize)
 
 # Enable Apache Rewrite Module
 RUN a2enmod rewrite
@@ -13,7 +13,7 @@ RUN docker-php-ext-install imap intl mbstring mcrypt mysqli pdo pdo_mysql zip
 VOLUME /var/www/html
 
 # Define Mautic version and expected SHA1 signature
-ENV MAUTIC_VERSION 2.1.1
+ENV MAUTIC_VERSION 2.3.0
 
 # Download package and extract to web volume
 RUN curl -o mautic.zip -SL https://s3.amazonaws.com/mautic/releases/${MAUTIC_VERSION}.zip \
@@ -35,5 +35,6 @@ RUN chmod +rw /var/log/mautic.cron.log
 
 RUN /usr/bin/crontab /etc/cron.d/mautic.cron
 
+RUN chmod 755 /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["apache2-foreground"]
