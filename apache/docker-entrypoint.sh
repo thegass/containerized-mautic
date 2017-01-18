@@ -64,10 +64,10 @@ echo >&2 "======================================================================
 # Write the database connection to the config so the installer prefills it
 if ! [ -e app/config/local.php ]; then
         php /makeconfig.php "$MAUTIC_DB_HOST" "$MAUTIC_DB_USER" "$MAUTIC_DB_PASSWORD" "$MAUTIC_DB_NAME"
-
-        # Make sure our web user owns the config file if it exists
-        chown www-data:www-data app/config/local.php
 fi
+
+# make sure the whole app is owned by the web user
+chown -R www-data:www-data /var/www/html/app/
 
 echo "running cron" && cron -f &
 

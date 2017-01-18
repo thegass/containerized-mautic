@@ -1,4 +1,5 @@
-*/1 * * * * /usr/local/bin/php /var/www/html/app/console mautic:segments:update >> /var/log/mautic.cron.log 2>&1
-*/1 * * * * /usr/local/bin/php /var/www/html/app/console mautic:campaigns:rebuild >> /var/log/mautic.cron.log 2>&1
-*/1 * * * * /usr/local/bin/php /var/www/html/app/console mautic:campaigns:trigger >> /var/log/mautic.cron.log 2>&1
+0,15,30,45  * * * * /usr/local/bin/php /var/www/html/app/console mautic:segments:update >> /var/log/mautic.cron.log 2>&1
+5,20,35,50  * * * * /usr/local/bin/php /var/www/html/app/console mautic:campaigns:rebuild >> /var/log/mautic.cron.log 2>&1
+10,25,40,55 * * * * /usr/local/bin/php /var/www/html/app/console mautic:campaigns:trigger >> /var/log/mautic.cron.log 2>&1
+
 
