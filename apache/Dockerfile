@@ -13,14 +13,16 @@ RUN docker-php-ext-install imap intl mbstring mcrypt mysqli pdo pdo_mysql zip
 VOLUME /var/www/html
 
 # Define Mautic version and expected SHA1 signature
-ENV MAUTIC_VERSION 2.5.1
+ENV MAUTIC_VERSION 2.6.1
 
 # Download package and extract to web volume
 RUN curl -o mautic.zip -SL https://s3.amazonaws.com/mautic/releases/${MAUTIC_VERSION}.zip \
  && mkdir /usr/src/mautic \
  && unzip mautic.zip -d /usr/src/mautic \
  && rm mautic.zip \
- && chown -R www-data:www-data /usr/src/mautic 
+ && chown -R www-data:www-data /usr/src/mautic
+
+RUN chown -R www-data:www-data /usr/src/mautic/app
 
 # Copy init scripts and custom .htaccess
 COPY docker-entrypoint.sh /entrypoint.sh
@@ -31,7 +33,6 @@ COPY mautic.cron /etc/cron.d/mautic.cron
 RUN chmod 644 /etc/cron.d/mautic.cron
 
 RUN touch /var/log/mautic.cron.log
-RUN chmod +rw /var/log/mautic.cron.log
 
 RUN /usr/bin/crontab /etc/cron.d/mautic.cron
 
