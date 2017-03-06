@@ -8,9 +8,12 @@ Mautic is distributed under the GPL v3 license. Full details of the license can 
 
 # How to use this image
 
-This Docker image is maintained by <a href="https://autoize.com">Autoize</a> Mautic Consultants.
+This Docker image is maintained by <a href="https://autoize.com">Autoize Mautic Consultants</a>.
+
 The latest Mautic version is published under a new tag within a day or two of the binaries being released to the open source community.
 Most users will want to refer to our step-by-step guide to <a href="https://autoize.com/run-mautic-as-a-docker-container/">running Mautic as a Docker container</a> but we have retained the more technical documentation below for experienced Docker and Docker Compose users.
+
+<hr />
 
 	docker run --name some-mautic --link some-mysql:mysql -d mautic/mautic
 
@@ -60,7 +63,7 @@ Support for older versions (down to 1.0) is provided on a best-effort basis.
 
 ## Issues
 
-If you have any problems with or questions about this image, please contact us through a [GitHub issue](https://github.com/autoize/docker-mautic/issues) or our website (https://autoize.com/contact/).
+If you have any problems with or questions about this image, please contact us through a [GitHub issue](https://github.com/autoize/docker-mautic/issues) or our [website](https://autoize.com/contact/).
 
 You can also reach the Mautic community through its [online forums](https://www.mautic.org/community/) or the [Mautic Slack channel](https://www.mautic.org/slack/).
 
