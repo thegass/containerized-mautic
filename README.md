@@ -2,16 +2,15 @@ Docker Mautic Image
 ===================
 <img src="https://www.mautic.org/media/images/github_readme.png" />
 
-# Supported tags and respective `Dockerfile` links
-
--	[`1.2.4-apache`, `1.2.4`, `1.2-apache`, `1.2`, `1-apache`, `apache`, `1`, `latest` (*apache/Dockerfile*)](https://github.com/mautic/docker-mautic/blob/master/apache/Dockerfile)
--	[`1.2.4-fpm`, `1.1-fpm`, `1-fpm`, `fpm` (*fpm/Dockerfile*)](https://github.com/mautic/docker-mautic/blob/master/fpm/Dockerfile)
-
 # License
 
 Mautic is distributed under the GPL v3 license. Full details of the license can be found in the [Mautic GitHub repository](https://github.com/mautic/mautic/blob/staging/LICENSE.txt).
 
 # How to use this image
+
+This Docker image is maintained by <a href="https://autoize.com">Autoize</a> Mautic Consultants.
+The latest Mautic version is published under a new tag within a day or two of the binaries being released to the open source community.
+Most users will want to refer to our step-by-step guide to <a href="https://autoize.com/run-mautic-as-a-docker-container/">running Mautic as a Docker container</a> but we have retained the more technical documentation below for experienced Docker and Docker Compose users.
 
 	docker run --name some-mautic --link some-mysql:mysql -d mautic/mautic
 
@@ -55,15 +54,13 @@ Run `docker-compose up`, wait for it to initialize completely, and visit `http:/
 
 # Supported Docker versions
 
-This image is officially supported on Docker version 1.7.1.
+This image is officially supported on Docker version 1.12.3.
 
 Support for older versions (down to 1.0) is provided on a best-effort basis.
 
-# User Feedback
-
 ## Issues
 
-If you have any problems with or questions about this image, please contact us through a [GitHub issue](https://github.com/mautic/docker-mautic/issues).
+If you have any problems with or questions about this image, please contact us through a [GitHub issue](https://github.com/autoize/docker-mautic/issues) or our website (https://autoize.com/contact/).
 
 You can also reach the Mautic community through its [online forums](https://www.mautic.org/community/) or the [Mautic Slack channel](https://www.mautic.org/slack/).
 
