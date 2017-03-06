@@ -8,10 +8,12 @@ Mautic is distributed under the GPL v3 license. Full details of the license can 
 
 # How to use this image
 
-This Docker image is maintained by <a href="https://autoize.com">Autoize Mautic Consultants</a>.
+This Docker image is maintained by <a href="https://autoize.com">Autoize Mautic consultants</a>.
 
 The latest Mautic version is published under a new tag within a day or two of the binaries being released to the open source community.
-Most users will want to refer to our step-by-step guide to <a href="https://autoize.com/run-mautic-as-a-docker-container/">running Mautic as a Docker container</a> but we have retained the more technical documentation below for experienced Docker and Docker Compose users.
+
+# Start here
+Most users will want to refer to our <a href="https://autoize.com/run-mautic-as-a-docker-container/">step-by-step guide to running Mautic as a Docker container</a> but we have retained the more technical documentation below for experienced Docker and Docker Compose users.
 
 <hr />
 
