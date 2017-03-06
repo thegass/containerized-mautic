@@ -1,5 +1,7 @@
-Docker Mautic Image
+# Docker Mautic Image
+
 ===================
+
 <img src="https://www.mautic.org/media/images/github_readme.png" />
 
 # License
@@ -8,12 +10,12 @@ Mautic is distributed under the GPL v3 license. Full details of the license can 
 
 # How to use this image
 
-This Docker image is maintained by <a href="https://autoize.com">Autoize Mautic consultants</a>. The latest Mautic version is published under a new tag within a day or two of the binaries being released to the open source community. Our goal is to maintain a constantly updated Docker image that Mautic users can utilize to deploy marketing automation in a containerized environment.
+This Docker image is maintained by [Autoize Mautic consultants](https://autoize.com). The latest Mautic version is published under a new tag within a day or two of the binaries being released to the open source community. Our goal is to maintain a constantly updated Docker image that Mautic users can utilize to deploy marketing automation in a containerized environment.
 
 # Start here
-Most users will want to refer to our <a href="https://autoize.com/run-mautic-as-a-docker-container/">step-by-step guide to running Mautic as a Docker container</a> but we have retained the more technical documentation below for experienced Docker and Docker Compose users.
+Most users will want to refer to our [step-by-step guide to running Mautic as a Docker container](https://autoize.com/run-mautic-as-a-docker-container/) but we have retained the more technical documentation below for experienced Docker and Docker Compose users.
 
-<hr />
+===================
 
 	docker run --name some-mautic --link some-mysql:mysql -d mautic/mautic
 
