@@ -16,7 +16,7 @@ Latest image: The image tagged autoize/mautic:latest is currently Mautic 2.7.0.
 
 Stable image: The image tagged autoize/mautic:stable is currently Mautic 2.5.1.
 
-If you are using Mautic in production, it may be advisable to stay on the stable image while the Mautic team gathers feedback from the community and issues bug fixes for the latest release. The latest image coincides with the latest release available with Mautic's community edition with the bleeding-edge features; the stable image is held back a two to three minor point releases.
+If you are using Mautic in production, it may be advisable to stay on the stable image while the Mautic team gathers feedback from the community and issues bug fixes for the latest release. The latest image coincides with the latest release available with Mautic's community edition with the bleeding-edge features; the stable image is held back two to three minor point releases.
 
 # Start here
 Most users will want to refer to our [step-by-step guide to running Mautic as a Docker container](https://autoize.com/run-mautic-as-a-docker-container/) but we have retained the more technical documentation below for experienced Docker and Docker Compose users.
