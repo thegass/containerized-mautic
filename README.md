@@ -23,7 +23,7 @@ Most users will want to refer to our [step-by-step guide to running Mautic as a 
 
 ===================
 
-	docker run --name some-mautic --link some-mysql:mysql -d mautic/mautic
+	docker run --name some-mautic --link some-mysql:mysql -d autoize/mautic
 
 The following environment variables are also honored for configuring your Mautic instance:
 
@@ -43,14 +43,14 @@ Then, access it via `http://localhost:8080` or `http://host-ip:8080` in a browse
 If you'd like to use an external database instead of a linked `mysql` container, specify the hostname and port with `MAUTIC_DB_HOST` along with the password in `MAUTIC_DB_PASSWORD` and the username in `MAUTIC_DB_USER` (if it is something other than `root`):
 
 	docker run --name some-mautic -e MAUTIC_DB_HOST=10.1.2.3:3306 \
-	    -e MAUTIC_DB_USER=... -e MAUTIC_DB_PASSWORD=... -d mautic/mautic
+	    -e MAUTIC_DB_USER=... -e MAUTIC_DB_PASSWORD=... -d autoize/mautic
 
 ## ... via [`docker-compose`](https://github.com/docker/compose)
 
 Example `docker-compose.yml` for `mautic`:
 
 	mautic:
-	  image: mautic/mautic
+	  image: autoize/mautic
 	  links:
 	    - mauticdb:mysql
 	  ports:
