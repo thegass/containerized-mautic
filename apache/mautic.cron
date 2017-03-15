@@ -1,5 +1,9 @@
 0,15,30,45  * * * * /usr/local/bin/php /var/www/html/app/console mautic:segments:update >> /var/log/mautic.cron.log 2>&1
-5,20,35,50  * * * * /usr/local/bin/php /var/www/html/app/console mautic:campaigns:rebuild >> /var/log/mautic.cron.log 2>&1
-10,25,40,55 * * * * /usr/local/bin/php /var/www/html/app/console mautic:campaigns:trigger >> /var/log/mautic.cron.log 2>&1
-
-
+2,17,32,47  * * * * /usr/local/bin/php /var/www/html/app/console mautic:campaigns:rebuild >> /var/log/mautic.cron.log 2>&1
+4,19,34,49  * * * * /usr/var/www/html/app/console mautic:campaigns:trigger >> /var/log/mautic.cron.log 2>&1
+6,21,36,51 * * * * /usr/local/bin/php /var/www/html/app/console mautic:messages:send >> /var/log/mautic.cron.log 2>&1
+8,23,38,53 * * * * /usr/local/bin/php /var/www/html/app/console mautic:emails:send >> /var/log/mautic.cron.log 2>&1
+10,25,40,55 * * * * /usr/local/bin/php /var/www/html/app/console mautic:emails:fetch >> /var/log/mautic.cron.log 2>&1
+12,27,42,57 * * * * /usr/local/bin/php /var/www/html/app/console mautic:social:monitoring >> /var/log/mautic.cron.log 2>&1
+14,29,44,59 * * * * /usr/local/bin/php /var/www/html/app/console mautic:webhooks:process >> /var/log/mautic.cron.log 2>&1
+16 5 * * 6 /usr/local/bin/php /var/www/html/app/console mautic:iplookup:download >> /var/log/mautic.cron.log 2>&1
