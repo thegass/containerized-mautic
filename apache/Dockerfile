@@ -13,7 +13,7 @@ RUN docker-php-ext-install imap intl mbstring mcrypt mysqli pdo pdo_mysql zip
 VOLUME /var/www/html
 
 # Define Mautic version and expected SHA1 signature
-ENV MAUTIC_VERSION 2.7.0
+ENV MAUTIC_VERSION 2.7.1
 
 # Download package and extract to web volume
 RUN curl -o mautic.zip -SL https://s3.amazonaws.com/mautic/releases/${MAUTIC_VERSION}.zip \
@@ -21,8 +21,6 @@ RUN curl -o mautic.zip -SL https://s3.amazonaws.com/mautic/releases/${MAUTIC_VER
  && unzip mautic.zip -d /usr/src/mautic \
  && rm mautic.zip \
  && chown -R www-data:www-data /usr/src/mautic
-
-RUN chown -R www-data:www-data /usr/src/mautic/app
 
 # Copy init scripts and custom .htaccess
 COPY docker-entrypoint.sh /entrypoint.sh
