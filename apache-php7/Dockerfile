@@ -49,7 +49,7 @@ RUN a2enmod rewrite expires
 VOLUME /var/www/html
 
 # Define Mautic version and expected SHA1 signature
-ENV MAUTIC_VERSION 2.7.1
+ENV MAUTIC_VERSION 2.8.0
 # ENV MAUTIC_SHA1 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 # Download package and extract to web volume
