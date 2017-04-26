@@ -12,9 +12,9 @@ Mautic is distributed under the GPL v3 license. Full details of the license can 
 
 This Docker image is maintained by [Autoize Mautic consultants](https://autoize.com). The latest Mautic version is published under a new tag within a day or two of the binaries being released to the open source community. Our goal is to maintain a constantly updated Docker image that Mautic users can utilize to deploy marketing automation in a containerized environment.
 
-Latest image: The image tagged autoize/mautic:latest is currently Mautic 2.7.1.
+Latest image: The image tagged autoize/mautic:latest is currently Mautic 2.8.0.
 
-Stable image: The image tagged autoize/mautic:stable is currently Mautic 2.5.1.
+Stable image: The image tagged autoize/mautic:stable is currently Mautic 2.7.1.
 
 If you are using Mautic in production, it may be advisable to stay on the stable image while the Mautic team gathers feedback from the community and issues bug fixes for the latest release. The latest image coincides with the latest release available for Mautic's community edition, with the bleeding-edge features; The stable image is held back two to three minor point releases.
 
@@ -49,23 +49,45 @@ If you'd like to use an external database instead of a linked `mysql` container,
 
 Example `docker-compose.yml` for `mautic`:
 
-	mautic:
-	  image: autoize/mautic
-	  links:
-	    - mauticdb:mysql
-	  ports:
-	    - 8080:80
-	
-	mauticdb:
-	  image: mysql:5.6
-	  environment:
-	    MYSQL_ROOT_PASSWORD: example
+	version: '2'
+
+	services:
+	   db:
+	     image: mariadb:latest
+	     volumes:
+	       - db_data:/var/lib/mysql
+	     restart: always
+	     environment:
+	       MYSQL_ROOT_PASSWORD: supersecret
+	       MYSQL_DATABASE: mautic
+	       MYSQL_USER: mautic
+	       MYSQL_PASSWORD: secret
+
+	   mautic:
+	     depends_on:
+	       - db
+	     image: autoize/mautic:stable
+	     ports:
+	       - "80:80"
+	       - "443:443"
+	     volumes:
+	       - mautic:/var/www/html
+	     restart: always
+	     environment:
+	       MAUTIC_DB_HOST: db:3306
+	       MAUTIC_DB_NAME: mautic
+	       MAUTIC_DB_USER: mautic
+	       MAUTIC_DB_PASSWORD: secret
+
+	volumes:
+	    db_data:
+	    mautic:
 
 Run `docker-compose up`, wait for it to initialize completely, and visit `http://localhost:8080` or `http://host-ip:8080`.
 
 # Supported Docker versions
 
-This image is officially supported on Docker version 1.12.3.
+This image is officially supported on Docker version 17.04.0-ce.
 
 Support for older versions (down to 1.0) is provided on a best-effort basis.
 
