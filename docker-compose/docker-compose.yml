@@ -1,0 +1,33 @@
+version: '2'
+
+services:
+   db:
+     image: mariadb:latest
+     volumes:
+       - db_data:/var/lib/mysql
+     restart: always
+     environment:
+       MYSQL_ROOT_PASSWORD: supersecret
+       MYSQL_DATABASE: mautic
+       MYSQL_USER: mautic
+       MYSQL_PASSWORD: secret
+
+   mautic:
+     depends_on:
+       - db
+     image: autoize/mautic:stable
+     ports:
+       - "80:80"
+       - "443:443"
+     volumes:
+       - mautic:/var/www/html
+     restart: always
+     environment:
+       MAUTIC_DB_HOST: db:3306
+       MAUTIC_DB_NAME: mautic
+       MAUTIC_DB_USER: mautic
+       MAUTIC_DB_PASSWORD: secret
+
+volumes:
+    db_data:
+    mautic:
