@@ -10,13 +10,13 @@ Mautic is distributed under the GPL v3 license. Full details of the license can 
 
 # How to use this image
 
-This Docker image is maintained by [Autoize Mautic consultants](https://autoize.com). The latest Mautic version is published under a new tag within a day or two of the binaries being released to the open source community. Our goal is to maintain a constantly updated Docker image that Mautic users can utilize to deploy marketing automation in a containerized environment.
+This Docker image is maintained by [Autoize Mautic consultants](https://autoize.com). The latest Mautic version is published after the binaries are released to the open source community by the Mautic team. Our goal is to maintain a constantly updated Docker image that Mautic users can utilize to deploy marketing automation in a containerized environment.
 
 Latest image: The image tagged autoize/mautic:latest is currently Mautic 2.10.0.
 
 Stable image: The image tagged autoize/mautic:stable is currently Mautic 2.9.2.
 
-If you are using Mautic in production, it may be advisable to stay on the stable image while the Mautic team gathers feedback from the community and issues bug fixes for the latest release. The latest image coincides with the latest release available for Mautic's community edition, with the bleeding-edge features; The stable image is held back two to three minor point releases.
+If you are using Mautic in production, it may be advisable to stay on the stable image while the Mautic team gathers feedback from the community and issues bug fixes for the latest release. The latest image coincides with the latest release available for Mautic's community edition, with the bleeding-edge features; The stable image is held back to a stable, bug fix release on the immediately previous minor version. 
 
 # Start here
 Most users will want to refer to our [step-by-step guide to running Mautic as a Docker container](https://autoize.com/run-mautic-as-a-docker-container/) but we have retained the more technical documentation below for experienced Docker and Docker Compose users.
