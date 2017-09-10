@@ -1,13 +1,6 @@
 FROM php:7.0-apache
 MAINTAINER Autoize <info@autoize.com> (@autoize)
 
-# Add Debian backports repo and install Let's Encrypt certbot
-RUN echo 'deb http://ftp.debian.org/debian jessie-backports main' >> /etc/apt/sources.list; \
-   \
-   set -ex; \
-   apt-get update; \
-   apt-get install -y python-certbot-apache -t jessie-backports;
-
 # Install the PHP extensions we need
 RUN apt-get install -y \
     libc-client-dev \
@@ -17,7 +10,6 @@ RUN apt-get install -y \
     libssl-dev \
     unzip \
     zip \
-# TODO: Consider removing cron and using a dedicated container for it
     cron \
     ; \
     rm -rf /var/lib/apt/lists/*; \
