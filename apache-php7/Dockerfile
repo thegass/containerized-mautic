@@ -2,7 +2,7 @@ FROM php:7.0-apache
 MAINTAINER Autoize <info@autoize.com> (@autoize)
 
 # Install the PHP extensions we need
-RUN apt-get install -y \
+RUN apt-get update && apt-get install -y \
     libc-client-dev \
     libicu-dev \
     libkrb5-dev \
