@@ -1,4 +1,4 @@
-# Docker Mautic Image
+# Containerized Mautic
 
 ===================
 
