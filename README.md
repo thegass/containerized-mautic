@@ -93,7 +93,7 @@ Support for older versions (down to 1.0) is provided on a best-effort basis.
 
 ## Issues
 
-If you have any problems with or questions about this image, please contact us through a [GitHub issue](https://github.com/autoize/docker-mautic/issues) or our [website](https://autoize.com/contact/).
+If you have any problems with or questions about this image, please contact us through a [GitHub issue](https://github.com/autoize/containerized-mautic/issues) or our [website](https://autoize.com/contact/).
 
 You can also reach the Mautic community through its [online forums](https://www.mautic.org/community/) or the [Mautic Slack channel](https://www.mautic.org/slack/).
 
