@@ -12,7 +12,7 @@ Mautic is distributed under the GPL v3 license. Full details of the license can 
 
 This Docker image is maintained by [Autoize Mautic consultants](https://autoize.com). The latest Mautic version is published after the binaries are released to the open source community by the Mautic team. Our goal is to maintain a constantly updated Docker image that Mautic users can utilize to deploy marketing automation in a containerized environment.
 
-Latest image: The image tagged autoize/mautic:latest is currently Mautic 2.10.0.
+Latest image: The image tagged autoize/mautic:latest is currently Mautic 2.10.1.
 
 Stable image: The image tagged autoize/mautic:stable is currently Mautic 2.9.2.
 
