@@ -69,7 +69,6 @@ fi
 
 # make sure the whole app is owned by the web user
 chown -R www-data:www-data /var/www/html
-chown -R www-data:www-data /var/www/html/app
 
 echo "running cron" && cron -f &
 
